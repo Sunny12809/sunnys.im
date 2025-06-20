@@ -14,13 +14,34 @@
         <div class="nav">
 
             <div class="navbuttons">
-                <a href="index.html">Home</a>
+                <a href="Index.html">Home</a>
                 <a href="Page1.html">Types of Cats</a>
-                <a href="Page2.html">Cat foods</a>
+                <a href="Page2.html">Friends Cats</a>
             </div>
 
             <div class="navtextholder">
-                <h1 class="navtext">Types of Cats</h1>
+                <h1 class="navtext">Friends Cats</h1>
+            </div>
+
+        </div>
+
+        <div class="maindiv">
+
+            <div class="carouseldiv">
+                <div class="carouselimgdiv" id="carouselimages">
+
+                    <img src="Images\OrientalShorthairCat.png">
+                    <img src="Images\ShorthairCat.png">
+                    <img src="Images\BritishShorthairCat.png">
+
+                </div>
+
+                <div class="carouselbuttonsdiv">
+
+                    <button onclick="prevSlide()">Back</button>
+                    <button onclick="nextSlide()">Next</button>
+
+                </div>
             </div>
 
         </div>
@@ -29,6 +50,11 @@
             .mainbody {
                 margin: 0px;
                 background: radial-gradient(circle at 50% 50%, #ffdb99, #d8ba84, #b29a6f, #8e7b5a, #6b5d47, #4a4134, #353028, #2c2721, #221f1b, #191714, #0f0e0c, #000000);
+            }
+
+            .maindiv{
+                display: flex;
+                justify-content: center;
             }
 
             .nav {
@@ -95,7 +121,81 @@
                 background-color: rgba(0, 0, 0, 0.75);
             }
 
+            .carouseldiv {
+                position: relative;
+                width: 80%;
+                max-width: 700px;
+                height: 400px;
+                overflow: visible;
+                perspective: 1000px;
+                display: flex;
+                justify-content: center;
+                margin-top: 15vh;
+            }
+
+            .carouselimgdiv {
+                position: relative;
+                height: 100%;
+            }
+
+            .carouselimgdiv img {
+                position: absolute;
+                width: 30vw;
+                object-fit: cover;
+                transform: translateX(-50%) scale(0.6);
+                opacity: 0.4;
+                transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+                pointer-events: none;
+            }
+
+            .carouselimgdiv img.active {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+                z-index: 3;
+            }
+
+            .carouselimgdiv img.prev {
+                transform: translateX(-150%) scale(0.7);
+                opacity: 0.5;
+                z-index: 2;
+            }
+
+            .carouselimgdiv img.next {
+                transform: translateX(50%) scale(0.7);
+                opacity: 0.5;
+                z-index: 2;
+            }
+
+            .carouselbuttonsdiv {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                transform: translateY(-50%);
+                z-index: 4;
+            }
+
+            .carouselbuttonsdiv button {
+                background-color: rgba(0, 0, 0, 1);
+                border: none;
+                color: white;
+                font-size: 24px;
+                padding: 0.7vw;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: background 1s;
+            }
+
+            .carouselbuttonsdiv button:hover {
+                background-color: rgba(0, 0, 0, 0.65);
+            }
+
         </style>
+
+        <script src="Java\Page2Java.js"></script>
 
     </body>
 
