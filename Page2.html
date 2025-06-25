@@ -14,7 +14,7 @@
         <div class="nav">
 
             <div class="navbuttons">
-                <a href="index.html">Home</a>
+                <a href="Index.html">Home</a>
                 <a href="Page1.html">Types of Cats</a>
                 <a href="Page2.html">Friends Cats</a>
             </div>
@@ -28,11 +28,22 @@
         <div class="maindiv">
 
             <div class="carouseldiv">
-                <div class="carouselimgdiv" id="carouselimages">
+                <div class="carouseldivdiv" id="carouselimages">
 
-                    <img src="Images\OrientalShorthairCat.png">
-                    <img src="Images\ShorthairCat.png">
-                    <img src="Images\BritishShorthairCat.png">
+                    <div class="carouselitem">
+                        <img src="Images\OrientalShorthairCat.png">
+                        <h1>Benjamins Cat</h1>
+                    </div>
+
+                    <div class="carouselitem">
+                        <img src="Images\ShorthairCat.png">
+                        <h1>Lucians Cat</h1>
+                    </div>
+
+                    <div class="carouselitem">
+                        <img src="Images\BritishShorthairCat.png">
+                        <h1>Camerons Cat</h1>
+                    </div>
 
                 </div>
 
@@ -133,39 +144,68 @@
                 margin-top: 15vh;
             }
 
-            .carouselimgdiv {
+            .carouseldivdiv {
                 position: relative;
                 height: 100%;
             }
 
-            .carouselimgdiv img {
+            .carouseldivdiv {
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
+
+            .carouselitem {
                 position: absolute;
-                width: 30vw;
-                object-fit: cover;
+                top: 0;
+                left: 50%;
                 transform: translateX(-50%) scale(0.6);
                 opacity: 0.4;
                 transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
-                border-radius: 10px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+                width: 30vw;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
                 pointer-events: none;
             }
 
-            .carouselimgdiv img.active {
+            .carouselitem.active {
                 transform: translateX(-50%) scale(1);
                 opacity: 1;
                 z-index: 3;
             }
 
-            .carouselimgdiv img.prev {
+            .carouselitem.prev {
                 transform: translateX(-150%) scale(0.7);
                 opacity: 0.5;
                 z-index: 2;
             }
 
-            .carouselimgdiv img.next {
+            .carouselitem.next {
                 transform: translateX(50%) scale(0.7);
                 opacity: 0.5;
                 z-index: 2;
+            }
+
+            .carouselitem img {
+                width: 100%;
+                aspect-ratio: 1;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            }
+
+            .carouselitem h1 {
+                color: white;
+                font-size: 3vw;
+                margin-top: 1vh;
+                text-align: center;
+                font-family: "Funnel Sans", sans-serif;
+                background-color: rgba(0, 0, 0, 0.6);
+                padding: 6px 12px;
+                border-radius: 10px;
             }
 
             .carouselbuttonsdiv {
